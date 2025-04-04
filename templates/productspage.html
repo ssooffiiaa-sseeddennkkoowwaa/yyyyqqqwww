@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Каталог обуви</title>
+</head>
+<style>
+body {
+    font-family: 'Manrope', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #C9EAF7;
+    color: #333;
+}
+
+.header {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+.main-image,
+.hover-image {
+    max-width: 100%;
+    height: auto;
+    transition: opacity 1s ease;
+}
+
+.hover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.header:hover .hover-image {
+    opacity: 1;
+}
+
+.header:hover .main-image {
+    opacity: 0;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0A4D88;
+    font-family: Manrope; /* Моноширинный шрифт */
+    font-size: 1.5em; /* Размер текста */
+    font-weight: bold; /* Жирный шрифт */
+    text-shadow: 3px 3px #0A4D88;
+    color: #FFFFFF;
+}
+.block {
+    border-radius: 20px;
+    width:1450px;
+    height:900px;
+    background-color: #3099D2;
+    margin: 0 auto;
+}
+
+h{
+    font-family: Manrope;
+    font-size: 30px;
+    color: black;
+}
+
+p1{
+    font-family: Manrope;
+    font-size: 20px;
+    color: black;
+}
+
+.content {
+    text-align: center;
+    margin: 20px;
+}
+
+.company-image {
+    max-width: 40%;
+    height: auto;
+}
+.gradient-button {
+  text-decoration: none;
+  display: inline-block;
+  color: white;
+  padding: 20px 50px;
+  margin: 10px 10px;
+  border-radius: 5px;
+  font-family: Manrope, sans-serif;
+  font-size: 18pt;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-image: linear-gradient( to right, #3099D2 0%, #0A4D88 51%, #46C7EB 100%);
+  background-size: 150% auto;
+  border-radius: 40px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+  transition: .5s;
+}
+.gradient-button:hover {
+  background-position: right center;
+}
+
+.navigation {
+    display: flex; /* Flexbox для горизонтального выравнивания кнопок */
+    justify-content: center; /* Центрирование кнопок по горизонтали */
+    background-color: #9cd0ed; /* Темный фон навигации */
+    padding: 20px 0; /* Отступы сверху и снизу */
+}
+
+.gradient-button1 {
+  text-decoration: none;
+  display: inline-block;
+  font-weight: bold; /* Жирный шрифт */
+  text-shadow: 2px 2px #A03030;
+  color: #F9E24E;
+  padding: 18px 18px;
+  margin: 10px 20px;
+  border-radius: 10px;
+  font-family: Manrope, sans-serif;
+  font-size: 13pt;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-image: linear-gradient( to right, #3099D2 0%, #0A4D88 51%, #46C7EB 100%);
+  background-size: 150% auto;
+  border-radius: 40px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+  transition: .5s;
+}
+.gradient-button1:hover {
+    background-position: right center;
+}
+
+h1 {
+    text-align: center;
+}
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 10px;
+    width: 250px;
+    text-align: center;
+    background-color: white;
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-card img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.product-card button {
+    margin-top: 10px;
+    padding: 10px;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.basket-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+    background-color: #28a745;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.button {
+    margin: 10px;
+    padding: 10px 20px;
+    background-image: linear-gradient( to right, #3099D2 0%, #0A4D88 51%, #46C7EB 100%);
+    color: white; /* Желтый текст */
+    border: none;
+    border-radius: 25px; /* Овальная форма */
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень */
+    font-family: Manrope, sans-serif;
+    font-size: 18pt;
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Анимация */
+}
+
+.button:hover {
+    background-color: #0056b3; /* Изменение фона при наведении */
+}
+
+.button:active {
+    transform: scale(0.95); /* Уменьшение кнопки при нажатии */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Изменение тени при нажатии */
+}
+.input-field {
+    margin: 20px;
+    padding: 10px;
+    border-radius: 25px; /* Овальная форма */
+    border: 2px solid #007BFF; /* Голубая граница */
+    background-color: #FFFFFF; /* Белый фон */
+    color: #333; /* Темный текст */
+    font-size: 16px; /* Размер шрифта */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень */
+    transition: border-color 0.2s ease, box-shadow 0.2s ease; /* Анимация */
+}
+
+.input-field:focus {
+    border-color: #0056b3; /* Изменение цвета границы при фокусе */
+    box-shadow: 0 0 10px rgba(0, 86, 179, 0.5); /* Изменение тени при фокусе */
+    outline: none; /* Убираем стандартное выделение */
+}
+        .text-area-container {
+            margin: 20px 0;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap; /* Позволяет текстовым полям занимать несколько строк на мобильных устройствах */
+        }
+
+        textarea {
+            width: 30%;
+            max-width: 450px; /* Ограничение максимальной ширины */
+            height: 200px;
+            padding: 10px;
+            margin: 10px; /* Отступ между текстовыми полями */
+            border-radius: 10px;
+            border: 2px solid #007BFF;
+            resize: none; /* Запретить изменение размера текстового поля */
+            font-size: 16px; /* Размер шрифта */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень */
+            transition: border-color 0.2s ease, box-shadow 0.2s ease; /* Анимация */
+        }
+
+        textarea:focus {
+            border-color: #0056b3; /* Изменение цвета границы при фокусе */
+            box-shadow: 0 0 10px rgba(0, 86, 179, 0.5); /* Изменение тени при фокусе */
+            outline: none; /* Убираем стандартное выделение */
+        }
+</style>
+<body>
+    <header class="header">
+        <img src="C:/Users/Софья/Desktop/спиридонов/static/шапка.jpg" alt="Картинка" class="main-image" id="mainImage">
+        <img src="C:/Users/Софья/Desktop/спиридонов/static/шапка(2).jpg" alt="Картинка при наведении" class="hover-image" id="hoverImage">
+    </header>
+
+    <div class="navigation">
+     <a href="C:/Users/Софья/Desktop/спиридонов/templates/mainpage.html" class="gradient-button"><b>Главная</b></a>
+    <a href="C:/Users/Софья/Desktop/спиридонов/templates/newspage.html" class="gradient-button"><b>Новости</b></a>
+    <a href="C:/Users/Софья/Desktop/спиридонов/templates/productspage.html" class="gradient-button"><b>Каталог</b></a>
+    <a href="C:/Users/Софья/Desktop/спиридонов/templates/authorization.html" class="gradient-button"><b>Вход | Регистрация</b></a>
+  </div>
+<br>
+    <div>
+        <button class="button" onclick="greetUser()">Приветствие</button><br>
+        <button class="button" onclick="celebrateHoliday()">Праздник</button><br>
+	
+	<div>
+        <input type="text" id="birthDateInput" class="input-field" placeholder="Введите дату рождения (дд.мм)" />
+        <button class="button" id="checkBirthdayButton">День рождения</button>
+        </div>
+
+        <button class="button" onclick="checkStoreSchedule()">Расписание работы магазина</button><br>
+        <button class="button" onclick="phoneDirectory()">Телефонный справочник</button><br>
+        <button class="button" onclick="businessDirectory()">Справочник предприятий</button><br>
+        <button class="button" onclick="universityDirectory()">Справочник по ВУЗам</button><br>
+        <button class="button" onclick="textEditor()">Редактор</button><br>
+    <div class="text-area-container" id="textAreaContainer">
+    </div>
+        <button class="button" onclick="windowNamesDemonstration()">Фреймы и имена окон</button><br>
+        <button class="button" onclick="openFramedWindow()">Фреймовое окно для Кирилла Сергеевича</button>
+    </div>
+
+    <script>
+        // 1. Приветствие в зависимости от времени суток
+        function greetUser() {
+            const currentHour = new Date().getHours();
+            let greeting;
+            if (currentHour < 12) {
+                greeting = "Доброе утро!";
+            } else if (currentHour < 18) {
+                greeting = "Добрый день!";
+            } else {
+                greeting = "Добрый вечер!";
+            }
+            alert(greeting);
+        }
+
+        // 2. Определить текущую дату и поздравить с праздником
+        function celebrateHoliday() {
+            const currentDate = new Date();
+            const month = currentDate.getMonth();
+            const day = currentDate.getDate();
+            const holidays = {
+                '0-1': "С Новым годом!",
+                '1-23': "С Днем защитника Отечества!",
+                '2-8': "С Международным женским днем!"
+            };
+            const holidayMessage = holidays[`${month}-${day}`];
+            if (holidayMessage) {
+                alert(holidayMessage);
+            } else {
+                alert("Сегодня нет праздника.");
+            }
+        }
+
+        // 3. Проверка даты рождения
+        function checkBirthday() {
+            const birthDateInput = document.getElementById("birthDateInput").value; // Получаем значение из input
+            const currentDate = new Date();
+            const day = currentDate.getDate();
+            const month = currentDate.getMonth() + 1; // Месяцы начинаются с 0
+
+            // Форматируем входную дату
+            const inputParts = birthDateInput.split('.');
+            const inputDay = parseInt(inputParts[0], 10);
+            const inputMonth = parseInt(inputParts[1], 10);
+
+            if (inputDay === day && inputMonth === month) {
+                alert("С днем рождения!");
+            } else {
+                alert("Сегодня не ваш день рождения.");
+            }
+        }
+
+        // Привязываем функцию проверки к кнопке
+        document.getElementById("checkBirthdayButton").addEventListener("click", checkBirthday);
+
+
+        function checkStoreSchedule() {
+            const currentDate = new Date();
+            const day = currentDate.getDay();
+            const hour = currentDate.getHours();
+            const month = currentDate.getMonth();
+            const date = currentDate.getDate();
+
+            const holidays = [
+                { month: 0, date: 1 }, // Новый год, 1 января
+                { month: 1, date: 23 }, // День защитника Отечества, 23 февраля
+                { month: 2, date: 8 }    // Международный женский день, 8 марта
+            ];
+
+            const isHoliday = holidays.some(holiday => holiday.month === month && holiday.date === date);
+            if (isHoliday) {
+                alert("Магазин сегодня не работает по случаю праздника.");
+                return;
+            }
+
+            if (day === 0 || day === 6) {
+                alert("Магазин не работает по выходным.");
+                return;
+            }
+
+            if (hour >= 9 && hour < 13) {
+                alert("Магазин открыт.");
+            } else if (hour >= 13 && hour < 14) {
+                alert("Магазин закрыт на обед.");
+            } else if (hour >= 14 && hour < 18) {
+                alert("Магазин открыт.");
+            } else {
+                alert("Магазин не работает.");
+            }
+        }
+
+
+        function phoneDirectory() {
+            const directory = {
+                "Седенкова": "89028825564",
+                "Седова": "89209446745",
+            };
+            const surname = prompt("Введите фамилию для поиска номера телефона:");
+            const phoneNumber = directory[surname];
+            alert(phoneNumber ? `Номер телефона: ${phoneNumber}` : "Запись не найдена.");
+        }
+
+
+        function businessDirectory() {
+            const businesses = {
+                "Зид": { address: "г. Ковров, ул. Труда, д. 4", profile: "Завод" },
+                "зид": { address: "г. Ковров, ул. Труда, д. 4", profile: "Завод" },
+                "ЗИД": { address: "г. Ковров, ул. Труда, д. 4", profile: "Завод" },
+                "Аскона": { address: "г. Ковров, ул. Комсомольская, 116Г, стр. 25", profile: "Производственное предприятие" },
+                "АСКОНА": { address: "г. Ковров, ул. Комсомольская, 116Г, стр. 25", profile: "Производственное предприятие" },
+                "аскона": { address: "г. Ковров, ул. Комсомольская, 116Г, стр. 25", profile: "Производственное предприятие" }
+            };
+            const name = prompt("Введите название предприятия для поиска:");
+            const business = businesses[name];
+            if (business) {
+                alert(`Адрес: ${business.address}\nПрофиль: ${business.profile}`);
+            } else {
+                alert("Запись не найдена.");
+            }
+        }
+
+ 
+        function universityDirectory() {
+            const universities = {
+                "влгу": { address: "ул. Горького, 87, Владимир", phone: "+7 (4922) 47-96-06", faculties: "Институт информационных технологий и радиоэлектроники" },
+                "ВлГУ": { address: "ул. Горького, 87, Владимир", phone: "+7 (4922) 47-96-06", faculties: "Институт информационных технологий и радиоэлектроники" },
+                "КГТА": { address: "город Ковров, ул. Маяковского, д. 19", phone: "+7 (49232) 3-14-81", faculties: "Механико-технологический, Автоматики и электроники, Экономики и менеджмента" },
+                "кгта": { address: "город Ковров, ул. Маяковского, д. 19", phone: "+7 (49232) 3-14-81", faculties: "Механико-технологический, Автоматики и электроники, Экономики и менеджмента" }
+            };
+            const universityName = prompt("Введите название ВУЗа для поиска:");
+            const university = universities[universityName];
+            if (university) {
+                alert(`Адрес: ${university.address}\nТелефон: ${university.phone}\nФакультеты: ${university.faculties}`);
+            } else {
+                alert("Запись не найдена.");
+            }
+        }
+
+ 
+        function textEditor() {
+            const textAreaContainer = document.getElementById('textAreaContainer');
+            textAreaContainer.innerHTML = "";
+            const documents = [
+                { title: "Документ 1", content: "«Начинать всегда стоит с того, что сеет сомнения» — Борис Стругацкий." },
+                { title: "Документ 2", content: "«Возможности не приходят сами — вы создаёте их» — Крис Гроссер." },
+                { title: "Документ 3", content: "«Неудача — это возможность начать заново, но уже более мудро» — Генри Форд." }
+            ];
+
+
+            documents.forEach((doc, index) => {
+                const textArea = document.createElement('textarea');
+                textArea.placeholder = doc.title;
+                textArea.value = doc.content;
+                textArea.id = `document${index + 1}`;
+                textAreaContainer.appendChild(textArea);
+            });
+        }
+
+        // 9. Открытие фреймового окна
+        function openFramedWindow() {
+            const framedWindow = window.open("", "framedWindow", "width=400,height=300");
+            framedWindow.document.write(`
+                <html>
+                    <head>
+                        <title>Фреймовое окно</title>
+                    </head>
+                    <body style="text-align: center;">
+                        <h1>Кирилл Сергеевич, поставьте пожалуйста 5</h1>
+                        <img src="C:/Users/Софья/Desktop/спиридонов/static/картинка.jpg" alt="Картинка" style="margin-top: 20px;" />
+                    </body>
+                </html>
+            `);
+            framedWindow.document.close(); // Завершаем документ, чтобы он отобразился
+        }
+
+        function windowNamesDemonstration() {
+            const newWindow = window.open("", "myWindow", "width=400,height=400");
+            newWindow.document.write("<h1>Фреймовое окно</h1><p>Да, это я</p>");
+        }
+    </script>
+
+</div>
+<br><br><br><br>
+    <footer class="footer">
+        <p>© 2024 Магазин детской обуви "Ералаш". Все права защищены. Адрес: г. Ковров, ул. Грибоедова, д. 60</p>
+    </footer>
+</body>
+</html>

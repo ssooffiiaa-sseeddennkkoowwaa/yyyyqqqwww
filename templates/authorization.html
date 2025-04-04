@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Вход</title>
+</head>
+<style>
+body {
+    font-family: 'Manrope', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #C9EAF7;
+    color: #333;
+}
+
+.header {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+.main-image,
+.hover-image {
+    max-width: 100%;
+    height: auto;
+    transition: opacity 1s ease;
+}
+
+.hover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.header:hover .hover-image {
+    opacity: 1;
+}
+
+.header:hover .main-image {
+    opacity: 0;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0A4D88;
+    font-family: Manrope; /* Моноширинный шрифт */
+    font-size: 1.5em; /* Размер текста */
+    font-weight: bold; /* Жирный шрифт */
+    text-shadow: 3px 3px #0A4D88;
+    color: #FFFFFF;
+}
+
+.content {
+    text-align: center;
+    margin: 20px;
+}
+
+.company-image {
+    max-width: 40%;
+    height: auto;
+}
+.gradient-button {
+  text-decoration: none;
+  display: inline-block;
+  color: white;
+  padding: 20px 50px;
+  margin: 10px 10px;
+  border-radius: 5px;
+  font-family: Manrope, sans-serif;
+  font-size: 18pt;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-image: linear-gradient( to right, #3099D2 0%, #0A4D88 51%, #46C7EB 100%);
+  background-size: 150% auto;
+  border-radius: 40px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+  transition: .5s;
+}
+.gradient-button:hover {
+  background-position: right center;
+}
+
+.navigation {
+    display: flex; /* Flexbox для горизонтального выравнивания кнопок */
+    justify-content: center; /* Центрирование кнопок по горизонтали */
+    background-color: #9cd0ed; /* Темный фон навигации */
+    padding: 20px 0; /* Отступы сверху и снизу */
+}
+
+.gradient-button1 {
+  text-decoration: none;
+  display: inline-block;
+  font-weight: bold; /* Жирный шрифт */
+  text-shadow: 2px 2px #A03030;
+  color: #F9E24E;
+  padding: 18px 18px;
+  margin: 10px 20px;
+  border-radius: 10px;
+  font-family: Manrope, sans-serif;
+  font-size: 13pt;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-image: linear-gradient( to right, #B4EAFF 0%, #7AD8FD 51%, #46C7EB 100%);
+  background-size: 150% auto;
+  border-radius: 40px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+  transition: .5s;
+}
+.gradient-button1:hover {
+  background-position: right center;
+}
+
+.block {
+  display: flex; /* Используем Flexbox для центрации содержимого */
+  justify-content: center; /* Центрируем содержимое блока */
+    align-items: center;
+  border-radius: 20px;
+  width:600px;
+  height:500px;
+  background-color: #3099D2;
+  margin: 0 auto;
+}
+.registration-container {
+    background-color: #f9f9f9; /* Светлый фон для контейнера формы */
+    border-radius: 8px; /* Закругление углов */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень для контейнера */
+    padding: 30px; /* Отступы внутри контейнера */
+    width: 300px; /* Ширина контейнера */
+}
+.form-group {
+    margin-bottom: 15px; /* Отступ между полями ввода */
+}
+
+label {
+    display: block; /* Блок для меток */
+    margin-bottom: 5px; /* Отступ снизу */
+    color: #333; /* Цвет текста меток */
+}
+
+input[type="email"],
+input[type="date"],
+input[type="password"] {
+    width: 100%; /* Полная ширина поля ввода */
+    padding: 10px; /* Внутренние отступы */
+    border: 1px solid #ccc; /* Обводка поля ввода */
+    border-radius: 5px; /* Закругление углов полей ввода */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для полей ввода */
+    font-size: 16px; /* Размер шрифта */
+}
+
+button {
+    width: 100%; /* Полная ширина кнопки */
+    padding: 10px; /* Внутренние отступы */
+    background-color: #007bff; /* Цвет кнопки */
+    color: white; /* Цвет текста на кнопке */
+    border: none; /* Уберем обводку */
+    border-radius: 5px; /* Закругление углов кнопки */
+    font-size: 16px; /* Размер шрифта */
+    cursor: pointer; /* Курсор при наведении */
+    transition: background-color 0.3s; /* Плавный переход цвета кнопки */
+}
+
+button:hover {
+    background-color: #0056b3; /* Цвет кнопки при наведении */
+}
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh; /* Полная высота экрана для вертикального центрирования */
+}
+</style>
+<body>
+    <header class="header">
+        <img src="C:/Users/Софья/Desktop/спиридонов/static/шапка.jpg" alt="Картинка" class="main-image" id="mainImage">
+        <img src="C:/Users/Софья/Desktop/спиридонов/static/шапка(2).jpg" alt="Картинка при наведении" class="hover-image" id="hoverImage">
+    </header>
+
+    <div class="navigation">
+     <a href="C:/Users/Софья/Desktop/спиридонов/templates/mainpage.html" class="gradient-button"><b>Главная</b></a>
+    <a href="C:/Users/Софья/Desktop/спиридонов/templates/newspage.html" class="gradient-button"><b>Новости</b></a>
+    <a href="C:/Users/Софья/Desktop/спиридонов/templates/productspage.html" class="gradient-button"><b>Каталог</b></a>
+    <a href="C:/Users/Софья/Desktop/спиридонов/templates/authorization.html" class="gradient-button"><b>Вход | Регистрация</b></a>
+  </div>
+
+        <div class="content">
+        <img src="C:/Users/Софья/Desktop/спиридонов/static/вход.jpg" alt="Картинка компании" class="company-image">
+    </div>
+
+
+    <div class="block">
+    <div class="registration-container">
+        <form method="POST" action="/autho">
+            <div class="form-group">
+                <label for="email">Электронная почта:</label>
+                <input type="email" class="form-control" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="birth_date">Дата рождения:</label>
+                <input type="date" class="form-control" name="birth_date" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Пароль:</label>
+                <input type="password" class="form-control" name="password" required>
+            </div>
+
+
+            <button type="submit" class="btn btn-primary">Войти</button>
+        </form><br>
+        <a href="C:/Users/Софья/Desktop/спиридонов/templates/index.html">Еще нет аккаунта? Зарегистрироваться</a>
+    </div>
+    </div><br>
+       <div class="content">
+        <img src="C:/Users/Софья/Desktop/спиридонов/static/телевк.jpg" alt="Картинка компании" class="company-image">
+    </div>
+<br><br><br>
+    <footer class="footer">
+        <p>© 2024 Магазин детской обуви "Ералаш". Все права защищены. Адрес: г. Ковров, ул. Грибоедова, д. 60</p>
+    </footer>
+</body>
+</html>

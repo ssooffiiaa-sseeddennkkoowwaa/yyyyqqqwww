@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Магазин детской обуви</title>
+</head>
+<style>
+body {
+    font-family: 'Manrope', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #C9EAF7;
+    color: #333;
+}
+
+.header {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+.main-image,
+.hover-image {
+    max-width: 100%;
+    height: auto;
+    transition: opacity 1s ease;
+}
+
+.hover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.header:hover .hover-image {
+    opacity: 1;
+}
+
+.header:hover .main-image {
+    opacity: 0;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.nav-button {
+    background-color: #46C7EB;
+    color: #FFF;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 45px;
+    padding: 30px 50px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: Manrope; /* Моноширинный шрифт */
+    font-size: 2.5em; /* Размер текста */
+    font-weight: bold; /* Жирный шрифт */
+    text-shadow: 3px 3px #A03030;
+    color: #F9E24E;
+}
+
+.nav-button:hover {
+    background-color: #3099D2;
+}
+
+.content {
+    text-align: center;
+    margin: 20px;
+}
+
+.company-image {
+    max-width: 65%;
+    height: auto;
+}
+
+.company-info {
+    margin-top: 15px;
+    background-color: #3099D2;
+    padding: 50px;
+    border-radius: 20px;
+    font-family: Manrope; /* Моноширинный шрифт */
+    font-size: 2em; /* Размер текста */
+    font-weight: bold; /* Жирный шрифт */
+    text-shadow: 3px 3px #0A4D88;
+    color: #FFFFFF;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0A4D88;
+    font-family: Manrope; /* Моноширинный шрифт */
+    font-size: 1.5em; /* Размер текста */
+    font-weight: bold; /* Жирный шрифт */
+    text-shadow: 3px 3px #0A4D88;
+    color: #FFFFFF;
+}
+
+.gradient-button {
+  text-decoration: none;
+  display: inline-block;
+  color: white;
+  padding: 20px 50px;
+  margin: 10px 10px;
+  border-radius: 5px;
+  font-family: Manrope, sans-serif;
+  font-size: 18pt;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-image: linear-gradient( to right, #3099D2 0%, #0A4D88 51%, #46C7EB 100%);
+  background-size: 150% auto;
+  border-radius: 40px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+  transition: .5s;
+}
+.gradient-button:hover {
+  background-position: right center;
+}
+
+.navigation {
+    display: flex; /* Flexbox для горизонтального выравнивания кнопок */
+    justify-content: center; /* Центрирование кнопок по горизонтали */
+    background-color: #9cd0ed; /* Темный фон навигации */
+    padding: 20px 0; /* Отступы сверху и снизу */
+}
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh; /* Полная высота экрана для вертикального центрирования */
+}
+
+.working-hours {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    text-align: center;
+    width: 400px;
+}
+
+h5 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.day {
+    margin: 5px 0;
+    font-size: 22px;
+    color: #555;
+}
+
+.day.off {
+    color: red;  /* Выделение выходных дней */
+    font-weight: bold;
+}
+        h1 {
+            font-size: 3em; /* размер текста */
+            text-align: center;
+            color: #333; /* цвет текста */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* тень текста */
+        }
+
+        input {
+            padding: 10px;
+            margin: 10px;
+            width: 220px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            transition: box-shadow 0.3s;
+        }
+
+        input:focus {
+            outline: none;
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+        }
+
+        button {
+            padding: 10px 15px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #333;
+        }
+</style>
+<body>
+    <header class="header">
+        <img src="C:/Users/Софья/Desktop/спиридонов/static/шапка.jpg" alt="Картинка" class="main-image" id="mainImage">
+        <img src="C:/Users/Софья/Desktop/спиридонов/static/шапка(2).jpg" alt="Картинка при наведении" class="hover-image" id="hoverImage">
+    </header>
+
+    <div class="navigation">
+     <a href="C:/Users/Софья/Desktop/спиридонов/templates/mainpage.html" class="gradient-button"><b>Главная</b></a>
+    <a href="C:/Users/Софья/Desktop/спиридонов/templates/newspage.html" class="gradient-button"><b>Новости</b></a>
+    <a href="C:/Users/Софья/Desktop/спиридонов/templates/productspage.html" class="gradient-button"><b>Каталог</b></a>
+    <a href="C:/Users/Софья/Desktop/спиридонов/templates/authorization.html" class="gradient-button"><b>Вход | Регистрация</b></a>
+  </div>
+<br>
+    <h1 id="greeting"></h1>
+    <div class="content">
+        <img src="C:/Users/Софья/Desktop/спиридонов/static/глав.jpg" alt="Картинка компании" class="company-image">
+        <p class="company-info">ВНИМАНИЕ! <br> Мы не доставляем товары! <br> Понравившийся товар вы можете приобрести по адресу: <br> город Ковров, ул. Грибоедова, д. 60</p>
+    </div> 
+    <div class="result" id="result"></div>
+    <div class="result" id="result"></div><br><br>
+    <div class="container">
+        <div class="working-hours">
+            <h5>Режим работы</h5>
+            <div class="day">Понедельник: 10:00 - 19:00</div>
+            <div class="day">Вторник: 10:00 - 19:00</div>
+            <div class="day">Среда: 10:00 - 19:00</div>
+            <div class="day">Четверг: 10:00 - 19:00</div>
+            <div class="day">Пятница: 10:00 - 19:00</div>
+            <div class="day">Суббота: 10:00 - 16:00</div>
+            <div class="day">Воскресенье: выходной</div>
+        </div>
+    </div><br><br><br>
+    <footer class="footer">
+        <p>© 2024 Магазин детской обуви "Ералаш". Все права защищены. Адрес: г. Ковров, ул. Грибоедова, д. 60</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Новости</title>
+</head>
+<style>
+body {
+    font-family: 'Manrope', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #C9EAF7;
+    color: #333;
+}
+
+.header {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+.main-image,
+.hover-image {
+    max-width: 100%;
+    height: auto;
+    transition: opacity 1s ease;
+}
+
+.hover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.header:hover .hover-image {
+    opacity: 1;
+}
+
+.header:hover .main-image {
+    opacity: 0;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.nav-button {
+    background-color: #46C7EB;
+    color: #FFF;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 45px;
+    padding: 30px 50px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: Manrope; /* Моноширинный шрифт */
+    font-size: 2.5em; /* Размер текста */
+    font-weight: bold; /* Жирный шрифт */
+    text-shadow: 3px 3px #A03030;
+    color: #F9E24E;
+}
+.nav-button:hover {
+    background-color: #3099D2;
+}
+
+.nav-button1 {
+    background-color: #46C7EB;
+    color: #FFF;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 45px;
+    padding: 18px 18px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: Manrope; /* Моноширинный шрифт */
+    font-size: 1.4em; /* Размер текста */
+    font-weight: bold; /* Жирный шрифт */
+    text-shadow: 3px 3px #A03030;
+    color: #F9E24E;
+}
+
+.nav-button1:hover {
+    background-color: #3099D2;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0A4D88;
+    font-family: Manrope; /* Моноширинный шрифт */
+    font-size: 1.5em; /* Размер текста */
+    font-weight: bold; /* Жирный шрифт */
+    text-shadow: 3px 3px #0A4D88;
+    color: #FFFFFF;
+}
+.block {
+    border-radius: 20px;
+    width:1450px;
+    height:580px;
+    background-color: #3099D2;
+    margin: 0 auto;
+}
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    padding: 16px;
+}
+
+.card {
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    height: 500px;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 16px;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card h3 {
+    font-size: 25px;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+    color: black;
+    margin-top: 16px;
+    margin-bottom: 8px;
+}
+
+.card p {
+    font-family: Manrope;
+    font-size: 20px;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+    color: black;
+}
+
+h{
+    font-family: Manrope;
+    font-size: 30px;
+    color: black;
+}
+
+p1{
+    font-family: Manrope;
+    font-size: 20px;
+    color: black;
+}
+
+.content {
+    text-align: center;
+    margin: 20px;
+}
+
+.company-image {
+    max-width: 40%;
+    height: auto;
+}
+.gradient-button1 {
+  text-decoration: none;
+  display: inline-block;
+  font-weight: bold; /* Жирный шрифт */
+  text-shadow: 2px 2px #A03030;
+  color: #F9E24E;
+  padding: 18px 18px;
+  margin: 10px 20px;
+  border-radius: 10px;
+  font-family: Manrope, sans-serif;
+  font-size: 13pt;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-image: linear-gradient( to right, #3099D2 0%, #0A4D88 51%, #46C7EB 100%);
+  background-size: 150% auto;
+  border-radius: 40px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+  transition: .5s;
+}
+.gradient-button1:hover {
+    background-position: right center;
+}
+
+
+.gradient-button {
+  text-decoration: none;
+  display: inline-block;
+  color: white;
+  padding: 20px 50px;
+  margin: 10px 10px;
+  border-radius: 5px;
+  font-family: Manrope, sans-serif;
+  font-size: 18pt;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-image: linear-gradient( to right, #3099D2 0%, #0A4D88 51%, #46C7EB 100%);
+  background-size: 150% auto;
+  border-radius: 40px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+  transition: .5s;
+}
+.gradient-button:hover {
+  background-position: right center;
+}
+
+.navigation {
+    display: flex; /* Flexbox для горизонтального выравнивания кнопок */
+    justify-content: center; /* Центрирование кнопок по горизонтали */
+    background-color: #9cd0ed; /* Темный фон навигации */
+    padding: 20px 0; /* Отступы сверху и снизу */
+}
+        h1 {
+            font-size: 3em; /* размер текста */
+            text-align: center;
+            color: #333; /* цвет текста */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* тень текста */
+        }
+        .editor {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .doc-container {
+            width: 25%;
+            min-width: 300px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            background-color: white;
+        }
+
+        .doc-header {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        .doc-body {
+            padding: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 200px;
+            border: none;
+            resize: none;
+            padding: 5px;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            border: none;
+            background-color: #28a745;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+</style>
+<body>
+    <header class="header">
+        <img src="C:/Users/Софья/Desktop/спиридонов/static/шапка.jpg" alt="Картинка" class="main-image" id="mainImage">
+        <img src="C:/Users/Софья/Desktop/спиридонов/static/шапка(2).jpg" alt="Картинка при наведении" class="hover-image" id="hoverImage">
+    </header>
+
+    <div class="navigation">
+     <a href="C:/Users/Софья/Desktop/спиридонов/templates/mainpage.html" class="gradient-button"><b>Главная</b></a>
+    <a href="C:/Users/Софья/Desktop/спиридонов/templates/newspage.html" class="gradient-button"><b>Новости</b></a>
+    <a href="C:/Users/Софья/Desktop/спиридонов/templates/productspage.html" class="gradient-button"><b>Каталог</b></a>
+    <a href="C:/Users/Софья/Desktop/спиридонов/templates/authorization.html" class="gradient-button"><b>Вход | Регистрация</b></a>
+  </div>
+<br>
+<h1 id="greeting"></h1>
+        <div class="content">
+        <img src="C:/Users/Софья/Desktop/спиридонов/static/новости.jpg" alt="Картинка компании" class="company-image">
+    </div>
+
+<div class="block">
+<div class="card-container">
+
+  <div class="card">
+    <img src="C:/Users/Софья/Desktop/спиридонов/static/акция.jpg" alt="Image 1"><br>
+    <h>АКЦИЯ МЕСЯЦА!</h><br>
+     <br><p1>Сандалии <br> Бренд К.Л.Б.К <br> Размерный ряд 31-36</p1>
+      <br><br><br><a href="C:/Users/Софья/Desktop/спиридонов/templates/cardpage.html" class="gradient-button1" >Подробнее</a>
+  </div>
+
+
+  <div class="card">
+    <img src="C:/Users/Софья/Desktop/спиридонов/static/акция 2.jpg" alt="Image 1"><br>
+    <h>АКЦИЯ МЕСЯЦА!</h><br>
+     <br><p1>Сапоги-дутики <br> Бренд B&G <br>ПОСЛЕДНИЙ размер 27</p1>
+      <br><br><br><a href="/kartochka" class="gradient-button1" >Подробнее</a>
+  </div>
+
+
+  <div class="card">
+    <img src="C:/Users/Софья/Desktop/спиридонов/static/акция 3.jpg" alt="Image 1"><br>
+    <h>АКЦИЯ МЕСЯЦА!</h><br>
+     <br><p1>Сапоги-дутики <br> Бренд Капитошка <br> Размерный ряд 23-28</p1>
+      <br><br><br><a href="/kartochka" class="gradient-button1" >Подробнее</a>
+  </div>
+
+
+  <div class="card">
+    <img src="C:/Users/Софья/Desktop/спиридонов/static/акция 4.jpg" alt="Image 1"><br>
+    <h>АКЦИЯ МЕСЯЦА!</h><br>
+     <br><p1>Ботинки со светодиодами<br> Бренд Колобок <br> Размерный ряд 23-28</p1>
+      <br><br><br><a href="/" class="gradient-button1" >Подробнее</a>
+  </div>
+</div>
+</div>
+
+
+<br><br><br><br><br>
+    <footer class="footer">
+        <p>© 2024 Магазин детской обуви "Ералаш". Все права защищены. Адрес: г. Ковров, ул. Грибоедова, д. 60</p>
+    </footer>
+
+</body>
+</html>
+
